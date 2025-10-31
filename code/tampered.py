@@ -9,7 +9,7 @@ from io import BytesIO
 PDF_INPUT = r"D:\LHV_BMTT_BT2\PDF\signed.pdf"
 PDF_OUTPUT = r"D:\LHV_BMTT_BT2\PDF\tampered.pdf"
 FONT_PATH = r"D:\LHV_BMTT_BT2\font\DejaVuSans.ttf"  # font Unicode hỗ trợ tiếng Việt
-HEADER_TEXT = "Helo tôi đã ddc thêm vào nè :D"
+HEADER_TEXT = "Tôi đã được LƯƠNG HOÀNG VIỆT thêm vào thông qua tampered.py"
 
 # ==== Đăng ký font Unicode ====
 pdfmetrics.registerFont(TTFont('DejaVu', FONT_PATH))
@@ -51,3 +51,4 @@ with open(PDF_OUTPUT, "wb") as f_out:
     writer.write(f_out)
 
 print(f"✅ PDF tampered đã được tạo tại: {PDF_OUTPUT}")
+

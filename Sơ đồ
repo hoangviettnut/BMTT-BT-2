@@ -1,0 +1,28 @@
+graph TD
+    subgraph "Luồng Logic (Tìm Dữ liệu Chữ ký)"
+        Catalog -->|/AcroForm| AcroForm
+        AcroForm -->|/Fields [Array]| SigField(Signature Field)
+        SigField -->|/V (Value)| SigDict(Signature Dictionary)
+        SigDict -->|/Contents| PKCS7[<Dữ liệu chữ ký PKCS#7>]
+        SigDict -->|/ByteRange| ByteRange[Phạm vi byte đã ký]
+    end
+
+    subgraph "Luồng Hiển thị (Tìm Hình ảnh Chữ ký)"
+        Catalog -->|/Pages| Pages(Pages Tree)
+        Pages -->|/Kids [Array]| Page(Page Object)
+        Page -->|/Annots [Array]| SigField
+        SigField -->|/AP (Appearance)| Appearance(Appearance Stream)
+        Appearance -->|/Resources| Resources(Resources)
+        Resources -->|/XObject| XObject(Form XObject: Hình ảnh chữ ký)
+    end
+
+    subgraph "Luồng Xác thực Lâu dài (PAdES LTV)"
+        Catalog -->|/DSS| DSS(Document Security Store)
+        DSS -->|/Certs| Certs[Validation Certs]
+        DSS -->|/OCSPs| OCSPs[OCSP Responses]
+        DSS -->|/CRLs| CRLs[CRL Lists]
+    end
+
+    style Catalog fill:#f9f,stroke:#333,stroke-width:2px
+    style SigDict fill:#f9f,stroke:#333,stroke-width:2px
+    style SigField fill:#ff9,stroke:#333,stroke-width:2px

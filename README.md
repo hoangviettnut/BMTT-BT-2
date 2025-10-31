@@ -15,5 +15,8 @@ Tạo certificate.pem và private.pem
 ### e) Kết quả chạy scripts thành công: <img width="839" height="139" alt="image" src="https://github.com/user-attachments/assets/9596f41b-f57f-42fe-a0cf-40cdbcddcf22" />
 ### f) File PDF được xuất với chữ ký số: <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/9d26338e-286a-4b56-83a4-18772fab9400" /><br>
 Sử dụng Microsoft Edge Browser để kiểm tra.
+## 4) Xác thực chữ ký trên PDF đã ký: Dựa vào yêu cầu bài đưa ra, sử dụng file verify.py để thiêt kế kiểm tra xác thực chữ ký. Sau khi kiểm tra PDF sẽ trả về kết quả vào file kiemtra.txt<br>
+<img width="1444" height="370" alt="image" src="https://github.com/user-attachments/assets/f9c047bc-619c-49d9-b044-3772ea5de4fd" /><br>
+### Toàn bộ log đã được lưu trong file kiemtra.txt với đầy đủ các bước kiểm tra mà bài yêu cầu.
 ## NOTE: CODE chứa đầy đủ các thuật toán, yêu cầu mà bài toán đề ra.
 ## CODE & PDF được upload kèm theo file README.md
